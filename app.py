@@ -46,3 +46,13 @@ plt.title('Value over Time')
 plt.xlabel('Date')
 plt.ylabel('Value')
 plt.show()
+
+def categorize_value(val):
+    if val < 10:
+        return "Low"
+    elif 10 <= val <= 20:
+        return "Medium"
+    else:
+        return "High"
+
+df['value_category'] = df['value'].apply(categorize_value)
