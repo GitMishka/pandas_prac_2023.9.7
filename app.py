@@ -1,5 +1,22 @@
 import pandas as pd
 
+# Sample data
+data = {
+    'id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'name': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+    'date': ["2021-09-01", "2021-09-02", "2021-09-03", "2021-09-04", "2021-09-05",
+             "2022-09-01", "2022-09-02", "2022-09-03", "2022-09-04", "2022-09-05"],
+    'value': [5, 10, 15, 20, 25, 30, 35, 40, 5, 10]
+}
+
+# Convert the dictionary to a DataFrame
+df = pd.DataFrame(data)
+
+# Save to CSV
+df.to_csv('input_data.csv', index=False)
+
+print("Sample input_data.csv created!")
+
 # Load the data from CSV file
 df = pd.read_csv('input_data.csv')
 
