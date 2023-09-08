@@ -38,3 +38,11 @@ print("Transformed data saved to output_data.csv")
 yearly_total = df.groupby(df['date'].astype('datetime64').dt.year)['value'].sum()
 yearly_total.to_csv('yearly_total.csv', index=False)
 print(yearly_total)
+import matplotlib.pyplot as plt
+
+df['date'] = pd.to_datetime(df['date'])
+plt.plot(df['date'], df['value'])
+plt.title('Value over Time')
+plt.xlabel('Date')
+plt.ylabel('Value')
+plt.show()
