@@ -17,3 +17,9 @@ data.fillna(value, inplace=True)  # Fills NaN values with a specific value
 
 data['date_column'] = pd.to_datetime(data['date_column'])
 data['year'] = data['date_column'].dt.year
+
+
+from sqlalchemy import create_engine
+
+engine = create_engine('postgresql://username:password@localhost:5432/mydatabase')
+data.to_sql('table_name', engine, if_exists='replace', index=False)
