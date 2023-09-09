@@ -13,3 +13,7 @@ data.to_sql('table_name', connection, if_exists='replace', index=False)
 
 data.dropna(inplace=True)  # Removes rows with NaN values
 data.fillna(value, inplace=True)  # Fills NaN values with a specific value
+
+
+data['date_column'] = pd.to_datetime(data['date_column'])
+data['year'] = data['date_column'].dt.year
