@@ -56,3 +56,5 @@ def categorize_value(val):
         return "High"
 
 df['value_category'] = df['value'].apply(categorize_value)
+std_dev = df['value'].std()
+print(f"Standard Deviation of Value: {std_dev}")
